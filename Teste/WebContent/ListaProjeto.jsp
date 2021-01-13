@@ -10,9 +10,6 @@
 	<title>Listagem</title>
 	
 	<script>
-		
-		//var b = document.getElementById('botao'); 
-		//b.addEventListener('click', Deletar);
 
 		function Deletar(codigo){
 			document.getElementById("confirma").setAttribute("open","");
@@ -25,11 +22,11 @@
 		var captar="";
 		function mostra(codigo,risco){
 			document.getElementById("dlg").setAttribute("open","");
-			document.getElementById("codigo").innerHTML=codigo;
-			document.getElementById("risco").innerHTML=risco;
+			//document.getElementById("codigo").innerHTML=codigo;
+			//document.getElementById("risco").innerHTML=risco;
 			
 			captar = document.getElementById('valor').value;
-			var msg="erro, informe um Valor de Investimento maior que o valor do projeto";
+			var msg="erro, informe um Valor de Investimento maior ou igual ao valor do projeto";
 			var c="funcionou";
 			
 			if(captar >= codigo){
@@ -51,7 +48,7 @@
 			<div id="container" align=center>
 				<h1>Listagem de Projetos</h1>
 				<div id="menu">
-				<a href="Cadastrar.html" id="cadastrar">Cadastrar</a>
+				<a href="Cadastrar.jsp" id="cadastrar">Cadastrar</a>
 				</div>
 				<table>
 					<tr >
@@ -85,33 +82,31 @@
 						<td align="left" id="idvalor"><%=projeto.getValor() %></td>
 						<td align="left"><%=projeto.getRisco() %></td>
 						<td align="left" class="ajustar"><%=projeto.getParticipantes() %></td>
+						
 						<td align="right">
-							<a href="Editar.jsp?codigo=<%=projeto.getCodigo()%>">Editar</a></td>
+							<a href="Editar.jsp?codigo=<%=projeto.getCodigo()%>">Editar</a>
+						</td>
+						
 					 	<td>
-					 	 	<!-- <input type="button" onclick="javascript:Deletar(aqui fica a id)" value="clicar()"> -->
 					 		<a href="javascript:Deletar(<%=id%>)">Excluir</a>
 					 	</td>
+					 	
 						<td>
 							<a href="javascript:mostra(<%=vl%>,<%=rc%>)">Simular</a>
 						</tr>
 					
 					 <dialog id="confirma">
 							<h2>Deseja Realmente deletar?</h2> 
-							<!-- <a href="Deletar(<%=id%>)">Deletar</a> -->
-						<!--<input type='button'name="excluir" value="botao">-->
-							<input type='submit' onclick="Deletar(<%=id%>)" name="excluir" value="botao"> 
-							<!-- <button onclick="location.href="Deletar.jsp?codigo="+codigo">Aqui</button> -->
+							<input type='submit' onclick="Deletar(<%=id%>)" name="excluir" value="botao" class="botao"> 
 		            		<button onclick="this.parentElement.close()">Cancel</button>
 					</dialog>
 					<dialog id="dlg">
-							<h2>Valor</h2>
-							
-							<h3 id='codigo'></h3> 
-							<h3 id='risco'></h3>
-							<input type="number" class="digito" id="valor" required step="0.01"><br><br>
-							<h4 class="resultado" id="resultado"></h4><br><br>
-							
-							<input type='submit' onclick="mostra(<%=vl%>,<%=rc%>)" value="calcular">
+							<h2>Informe o valor do Investimento</h2>
+							<!-- <h3 id='codigo'></h3> 
+							<h3 id='risco'></h3> -->
+							<input type="number" class="digito" id="valor" required step="0.01" min="0"><br>
+							<h3 class="resultado" id="resultado"></h3>
+							<input type='submit' onclick="mostra(<%=vl%>,<%=rc%>)" value="calcular" class="botao">
 		            		<button onclick="this.parentElement.close()">Cancel</button>
 					</dialog>
 					

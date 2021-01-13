@@ -1,1 +1,99 @@
 @charset "utf-8";
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background-image: linear-gradient(to right,#B0A7A8, #E2DDDA ,#EDEAF1 );
+}
+
+table {
+	border-collapse: collapse;
+    border-spacing: 0;
+	width: 1000px;
+	height: 100%;
+	border:none;
+	background-color: #f2edee;
+}
+th{
+	background: #303030 ;
+	color:#f5f5f5;
+	margin:0px;
+}
+
+th, td {
+	text-align:center;
+	padding: 15px 10px;;
+	line-height:1.5.em;
+}
+td{
+	color: #464646;
+}
+h1 {
+	margin: 40px auto 0px auto;
+	color: #303030;
+}
+a {
+	text-decoration: none;
+}
+
+td a {
+	color: #464646;
+	display: block;
+	padding: 0 1.5em;
+	line-height: 2.2em;
+}
+
+td a:hover {
+	border-bottom: 1px solid black;
+	color: black;
+}
+
+#menu a{
+	border-radius: 5px;
+	color:white;
+	background: #303030;
+}
+#menu a:hover {
+	color:white;
+	background-color: #444444;
+}
+#container {
+	width: 100%; 
+	margin: 0 auto; 
+}
+
+
+#cadastrar {
+	margin: 0px 0px 5px 0px;
+	padding: 10px 20px;
+	text-align:right;
+}
+#menu{
+	margin: 0px 0px 5px 0px;
+	padding: 10px 0px;
+	text-align:right;
+	width: 1000px;
+}
+
+.ajustar{
+	text-align: left;
+}
+#confirma, #dlg{
+	border: 1px solid gray;
+	border-radius: 10px;
+	width: 300px;
+}
+.botao{
+	width:90px;
+	margin:20px;
+	padding: 10px;
+	background-color:#303030;
+	color:white;
+	cursor: pointer;
+}
+button{
+	width:90px;
+	padding:10px;
+	background-color:#303030;
+	color:white;
+	cursor: pointer;
+}
