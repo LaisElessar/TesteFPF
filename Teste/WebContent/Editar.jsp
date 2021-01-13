@@ -5,7 +5,7 @@
 	<%
 		ProjetoDao dao = new ProjetoDao();
 		Projeto proj= dao.getProjeto(request, response);
-		
+
 		SimpleDateFormat forData = new SimpleDateFormat("yyyy-MM-dd");
 		String dt_Inicio = forData.format(proj.getDataInicio().getTime());
 		String dt_Final = forData.format(proj.getDataFinal().getTime());
@@ -21,6 +21,7 @@
 		<div id="container">
 			<form action="altProjetoServlet" id="formulario">
 				<h3>Edite seu Projeto</h3>
+				<input class="input" type="hidden" name="codigo" value="<%=proj.getCodigo()%>" required><br>
 				<input class="input" type="text" name="nome" value="<%=proj.getNome() %>" required/><br/>
 				<input class="input" type="date" name="dataInicio" value="<%=dt_Inicio %>" required/><br/>
 				<input class="input" type="date" name="dataFinal" value="<%=dt_Final %>" required/><br/>

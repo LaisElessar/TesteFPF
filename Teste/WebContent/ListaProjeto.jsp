@@ -16,7 +16,7 @@
 			//this.parentElement.close()
 			//var b = document.getElementById('botao'); 
 			//b.addEventListener('click', );
-			location.href="Deletar.jsp?codigo="+codigo;
+			location.href="delProjetoServlet?codigo="+codigo;
 		}
 		
 		var captar="";
@@ -84,7 +84,7 @@
 						<td align="left" class="ajustar"><%=projeto.getParticipantes() %></td>
 						
 						<td align="right">
-							<a href="Editar.jsp?codigo=<%=projeto.getCodigo()%>">Editar</a>
+							<a href="Editar.jsp?codigo=<%=id%>">Editar</a>
 						</td>
 						
 					 	<td>
